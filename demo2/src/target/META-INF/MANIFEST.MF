@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: 11.0.13 (Oracle Corporation)
+Main-Class: com.hiyongz.demo2.Hello
+Class-Path: ../../lib/greeting.jar
