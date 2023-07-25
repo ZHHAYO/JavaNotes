@@ -1,5 +1,6 @@
 package com.hiyongz.dao.dataobject;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor //无参构造
 @AllArgsConstructor //全参构造
+@TableName("user")
 public class User {
     private Integer id; //ID
     private String username; //用户名

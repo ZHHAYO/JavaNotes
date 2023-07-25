@@ -3,10 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+<!--    <parent>-->
+<!--        <groupId>com.hiyongz</groupId>-->
+<!--        <artifactId>springbootdemo</artifactId>-->
+<!--        <version>0.0.1-SNAPSHOT</version>-->
+<!--    </parent>-->
+
+    <!--父工程-->
     <parent>
         <groupId>com.hiyongz</groupId>
-        <artifactId>springbootdemo</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <artifactId>springbootdemo-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../springbootdemo-parent/pom.xml</relativePath>
     </parent>
 
     <artifactId>springbootdemo-service</artifactId>
@@ -19,13 +27,16 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.hiyongz</groupId>
-            <artifactId>springbootdemo-dao</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.hiyongz</groupId>
+            <artifactId>springbootdemo-dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>

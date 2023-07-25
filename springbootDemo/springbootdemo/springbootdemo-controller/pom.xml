@@ -3,13 +3,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+<!--    <parent>-->
+<!--        <groupId>com.hiyongz</groupId>-->
+<!--        <artifactId>springbootdemo</artifactId>-->
+<!--        <version>0.0.1-SNAPSHOT</version>-->
+<!--    </parent>-->
+
+    <!--父工程-->
     <parent>
         <groupId>com.hiyongz</groupId>
-        <artifactId>springbootdemo</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <artifactId>springbootdemo-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../springbootdemo-parent/pom.xml</relativePath>
     </parent>
 
-    <groupId>com.hiyongz</groupId>
+<!--    <groupId>com.hiyongz</groupId>-->
     <artifactId>springbootdemo-controller</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springbootdemo-controller</name>
@@ -23,12 +31,28 @@
         <dependency>
             <groupId>com.hiyongz</groupId>
             <artifactId>springbootdemo-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.hiyongz</groupId>
-            <artifactId>springbootdemo-service</artifactId>
+            <artifactId>springbootdemo-dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.hiyongz</groupId>
+            <artifactId>springbootdemo-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--web起步依赖：包含了web应用开发所需要的常见依赖，内部集成了内置的Tomcat服务器。以`spring-boot-starter-`作为开头-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--fastJSON-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
