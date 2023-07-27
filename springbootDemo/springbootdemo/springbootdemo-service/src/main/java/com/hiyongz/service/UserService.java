@@ -50,5 +50,5 @@ public interface UserService {
      */
     User login(User user);
 
-    UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
+//    UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
 }

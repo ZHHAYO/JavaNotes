@@ -9,10 +9,15 @@ spring:
       max-file-size: 10MB
       max-request-size: 100MB
 
-mybatis:
+#mybatis:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    map-underscore-to-camel-case: true
+
+# 配置MyBatis日志
+mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    map-underscore-to-camel-case: true
 
 github:
   url: https://github/com/explore
