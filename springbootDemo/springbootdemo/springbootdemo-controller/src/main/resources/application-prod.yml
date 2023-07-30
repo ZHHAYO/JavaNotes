@@ -1,7 +1,4 @@
-
 spring:
-  profiles:
-    active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/springbootdemo
@@ -11,8 +8,10 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 100MB
-
-
+#生产环境关闭swagger 3接口文档
+springfox:
+  documentation:
+    enabled: false
 #mybatis:
 #  configuration:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

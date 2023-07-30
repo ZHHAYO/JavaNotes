@@ -82,5 +82,12 @@
         </foreach>
     </delete>
 
+    <!--SQL片段，记录基础字段-->
+    <sql id="BaseColumns">id,username,age,email</sql>
+    <!--IPage<User> selectPageVo(Page<User> page, Integer age);-->
+    <select id="selectPageVo" resultType="User">
+        SELECT <include refid="BaseColumns"></include> FROM user WHERE age > #
+        {age}
+    </select>
 
 </mapper>

@@ -7,6 +7,8 @@ import com.hiyongz.dao.dataobject.PageBean;
 import com.hiyongz.dao.dataobject.User;
 import com.hiyongz.dao.mapper.UserMapper;
 import com.hiyongz.service.UserService;
+import com.hiyongz.vo.UserVO;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -34,6 +36,8 @@ public class UserServiceImpl implements UserService {
 
         //2. 执行查询
         List<User> empList = userMapper.list(name, gender, begin, end);
+//        UserVO userVO = new UserVO();
+//        BeanUtils.copyProperties(empList, userVO);
         Page<User> p = (Page<User>) empList;
 
         //3. 封装PageBean对象

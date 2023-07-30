@@ -3,11 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-<!--    <parent>-->
-<!--        <groupId>com.hiyongz</groupId>-->
-<!--        <artifactId>springbootdemo</artifactId>-->
-<!--        <version>0.0.1-SNAPSHOT</version>-->
-<!--    </parent>-->
+
+    <artifactId>springbootdemo-api</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <!--父工程-->
     <parent>
@@ -17,20 +15,10 @@
         <relativePath>../springbootdemo-parent/pom.xml</relativePath>
     </parent>
 
-    <artifactId>springbootdemo-dao</artifactId>
-
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <dependencies>
-        <!--集成 springfox swagger3 -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-boot-starter</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>

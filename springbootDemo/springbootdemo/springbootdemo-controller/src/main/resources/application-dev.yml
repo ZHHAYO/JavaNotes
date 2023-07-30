@@ -1,7 +1,4 @@
-
 spring:
-  profiles:
-    active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/springbootdemo
@@ -11,17 +8,24 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 100MB
-
-
+#测试环境开启swagger 3接口文档
+springfox:
+  documentation:
+    enabled: true
 #mybatis:
 #  configuration:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 #    map-underscore-to-camel-case: true
 
-# 配置MyBatis日志
+
 mybatis-plus:
   configuration:
+    # 配置MyBatis日志
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # 配置类型别名所对应的包
+  type-aliases-package: com.hiyongz.dao.dataobject
+  # 配置扫描通用枚举
+  type-enums-package: com.hiyongz.dao.enums
 
 github:
   url: https://github/com/explore

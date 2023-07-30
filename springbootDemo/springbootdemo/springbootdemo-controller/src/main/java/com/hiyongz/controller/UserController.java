@@ -4,6 +4,10 @@ import com.hiyongz.dao.dataobject.PageBean;
 import com.hiyongz.dao.dataobject.Result;
 import com.hiyongz.dao.dataobject.User;
 import com.hiyongz.service.UserService;
+import com.hiyongz.vo.UserVO;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +18,7 @@ import java.util.List;
 /**
  * @author 10287
  */
+@Api(tags = "用户接口")
 @RequestMapping("/users")
 @RestController
 public class UserController {
@@ -32,6 +37,7 @@ public class UserController {
 //        return Result.success(usertList);
 //    }
 
+    @ApiOperation(value = "查询用户", notes = "分页查询用户")
     @GetMapping
     public Result list(@RequestParam(defaultValue = "1") Integer page,
                        @RequestParam(defaultValue = "10") Integer pageSize,
@@ -44,12 +50,17 @@ public class UserController {
     }
 
 
+    @ApiOperation(value = "查询用户", notes = "通过ID查询用户")
     @GetMapping("/{id}")
     public Result getById(@PathVariable Integer id){
         User user = userService.getById(id);
-        return Result.success(user);
+        UserVO userVO = new UserVO();
+        BeanUtils.copyProperties(user, userVO);
+        return Result.success(userVO);
+        //  return Result.success(user);
     }
 
+    @ApiOperation(value = "更新用户", notes = "更新员工信息")
     @PutMapping
     public Result update(@RequestBody User user){
         // log.info("更新员工信息 : {}", user);

@@ -22,6 +22,7 @@
         <module>../springbootdemo-dao</module>
         <module>../springbootdemo-common</module>
         <module>../springbootdemo-controller</module>
+        <module>../springbootdemo-api</module>
     </modules>
 
     <properties>
@@ -35,6 +36,7 @@
         <fastjson.version>1.2.76</fastjson.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <mybatis-plus.version>3.4.3</mybatis-plus.version>
+        <springfox.version>3.0.0</springfox.version>
     </properties>
 
     <dependencies>
@@ -125,6 +127,13 @@
                 <groupId>javax.xml.bind</groupId>
                 <artifactId>jaxb-api</artifactId>
                 <version>${jaxb-api.version}</version>
+            </dependency>
+
+            <!--集成 springfox swagger3 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox.version}</version>
             </dependency>
 
         </dependencies>
