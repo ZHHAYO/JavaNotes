@@ -1,6 +1,7 @@
 package com.hiyongz;
 
 import com.hiyongz.dao.dataobject.Userplus;
+import com.hiyongz.dao.enums.GenderEnum;
 import com.hiyongz.dao.mapper.UserplusMapper;
 import com.hiyongz.service.UserplusService;
 import org.junit.jupiter.api.Test;
@@ -27,7 +28,7 @@ class SpringbootdemoControllerApplicationTests {
     public void testInsert(){
         LocalDateTime now = LocalDateTime.now();
 //        Userplus userplus = new Userplus((Integer) null, "lishi", "123456", "张三", (short) 1, "zhangsan@atguigu.com", "", "", 1, "", now, now, "0");
-        Userplus userplus = new Userplus((Integer) null, "zhangsan", "123456", "张三", (short) 1, 15, "", "", "zhangsan@atguigu.com", 1, "", now, now, "0");
+        Userplus userplus = new Userplus((Integer) null, "zhangsan", "123456", "张三", GenderEnum.MALE, 15, "", "", "zhangsan@atguigu.com", 1, "", now, now, "0");
         //INSERT INTO user ( id, name, age, email ) VALUES ( ?, ?, ?, ? )
         int result = userplusMapper.insert(userplus);
         System.out.println("受影响行数："+result);
@@ -66,7 +67,7 @@ class SpringbootdemoControllerApplicationTests {
     public void testUpdateById(){
 //        Userplus userplus = new Userplus(4L, "admin", 22, null);
         LocalDateTime now = LocalDateTime.now();
-        Userplus userplus = new Userplus(17, "lisi", "12345678", "李四", (short) 1, 12, "","", "zhangsan@atguigu.com", 1, "", now, now,"0");
+        Userplus userplus = new Userplus(17, "lisi", "12345678", "李四", GenderEnum.MALE, 12, "","", "zhangsan@atguigu.com", 1, "", now, now,"0");
 //        UPDATE user SET name=?, age=? WHERE id=?
         int result = userplusMapper.updateById(userplus);
         System.out.println("受影响行数："+result);

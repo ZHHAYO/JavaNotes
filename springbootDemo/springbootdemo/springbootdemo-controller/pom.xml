@@ -19,9 +19,9 @@
 
 <!--    <groupId>com.hiyongz</groupId>-->
     <artifactId>springbootdemo-controller</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>springbootdemo-controller</name>
-    <description>springbootdemo-controller</description>
+<!--    <version>0.0.1-SNAPSHOT</version>-->
+<!--    <name>springbootdemo-controller</name>-->
+<!--    <description>springbootdemo-controller</description>-->
 
     <properties>
         <java.version>11</java.version>
